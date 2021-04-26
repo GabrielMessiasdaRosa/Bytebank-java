@@ -5,41 +5,41 @@ public class CriaConta {
 //primeiraConta
         Conta primeiraConta = new Conta();
 
-        primeiraConta.agencia = "0001";
-        primeiraConta.numero = 1;
-        primeiraConta.titular = "Gabriel Messias da Rosa";
+        primeiraConta.setAgencia(1001);
+        primeiraConta.setNumeroConta(1230001);
+        primeiraConta.setTitular("Gabriel Messias da Rosa");
 
 
 //segundaConta
         Conta segundaConta = new Conta();
 
-        segundaConta.agencia = "0001";
-        segundaConta.numero = 2;
-        segundaConta.titular = "Mariele Aparecida Gusmao";
+        segundaConta.setAgencia(1001);
+        segundaConta.setNumeroConta(1230002);;
+        segundaConta.setTitular("Mariele Aparecida Gusmao");;
 
 
 //programa em si
         System.out.println();
-        System.out.println("Bem vindo(a), " + primeiraConta.titular + ", ao ByteBank");
-        System.out.println("Seu saldo é de : R$" + primeiraConta._saldo);
-        System.out.println("Numero da conta : " + primeiraConta.numero);
-        System.out.println("Sua agencia é : " + primeiraConta.agencia);
+        System.out.println("Bem vindo(a), " + primeiraConta.getTitular()+ ", ao ByteBank");
+        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
+        System.out.println("Numero da conta : " + primeiraConta.getNumeroConta());
+        System.out.println("Sua agencia é : " + primeiraConta.getAgencia());
         System.out.println();
         primeiraConta.deposita(5000);
-        System.out.println("Seu saldo é de : R$" + primeiraConta._saldo);
+        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
         System.out.println();
         primeiraConta.saca(2500);
-        System.out.println("Seu saldo é de : R$" + primeiraConta._saldo);
+        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
         System.out.println();
         primeiraConta.transfere(100, segundaConta);
-        System.out.println("Seu saldo é de : R$" + primeiraConta._saldo);
+        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
 
         
         System.out.println();
-        System.out.println("Bem vindo(a), " + segundaConta.titular + ", ao ByteBank");
-        System.out.println("Seu _saldo é de : " + segundaConta._saldo);
-        System.out.println("Numero da conta : " + segundaConta.numero);
-        System.out.println("Sua agencia é : " + segundaConta.agencia);
+        System.out.println("Bem vindo(a), " + segundaConta.getTitular() + ", ao ByteBank");
+        System.out.println("Seu _saldo é de : " + segundaConta.getSaldo());
+        System.out.println("Numero da conta : " + segundaConta.getNumeroConta());
+        System.out.println("Sua agencia é : " + segundaConta.getAgencia());
         System.out.println();
 
 

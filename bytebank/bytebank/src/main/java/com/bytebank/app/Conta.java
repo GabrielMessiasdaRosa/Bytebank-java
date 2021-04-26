@@ -1,10 +1,44 @@
 package com.bytebank.app;
 
 public class Conta {
-    double _saldo;
-    String agencia; // atributos da classe Conta insto é apenas uma especificaçao do obejeto;
-    int numero;
-    String titular;
+    private double _saldo;
+    private int agencia; // atributos da classe Conta insto é apenas uma especificaçao do obejeto;
+    private int numeroConta;
+    private String titular;
+    
+    //geters e seters
+    //saldo(nao há seter para o saldo)
+    public double getSaldo(){
+        return this._saldo;
+    }
+
+    //Agencia
+    public void setAgencia(int novaAgencia){
+        this.agencia = novaAgencia;
+    }
+    public int getAgencia(){
+        return this.agencia;
+    }
+
+    //Numero Da Conta
+    public void setNumeroConta(int novoNumeroConta){
+        this.numeroConta = novoNumeroConta;
+    }
+    public int getNumeroConta(){
+        return this.numeroConta;
+    }
+
+    //Titular
+    public void setTitular(String novoTitular){
+        this.titular = novoTitular;
+    }
+    public String getTitular(){
+        return this.titular;
+    }
+
+
+
+
 
     // comportamentos da classe Conta
 
@@ -40,5 +74,6 @@ public class Conta {
             return false;
         }
     }
+    
 
 }
