@@ -4,41 +4,55 @@ public class Conta {
     private double _saldo;
     private int agencia; // atributos da classe Conta insto é apenas uma especificaçao do obejeto;
     private int numeroConta;
-    private String titular;
-    
-    //geters e seters
-    //saldo(nao há seter para o saldo)
-    public double getSaldo(){
+    private Cliente titular;
+    private static int total;
+    //Construtor
+    public Conta(int agencia, int numeroConta, Cliente titular) {
+        this.agencia = agencia;
+        this.numeroConta = numeroConta;
+        this.titular = titular;
+        System.out.println("\nConta criada com sucesso! Titular da Conta; " + this.titular.getNome());
+        Conta.total++;
+        System.out.println("O total de contas é " + Conta.total);
+    }
+
+    // getters e setters
+    // saldo(nao há setter para o saldo)
+    public double getSaldo() {
         return this._saldo;
     }
 
-    //Agencia
-    public void setAgencia(int novaAgencia){
-        this.agencia = novaAgencia;
+    // Agencia
+    public void setAgencia(int agencia) {
+        this.agencia = agencia;
     }
-    public int getAgencia(){
+
+    public int getAgencia() {
         return this.agencia;
     }
 
-    //Numero Da Conta
-    public void setNumeroConta(int novoNumeroConta){
-        this.numeroConta = novoNumeroConta;
+    // Numero Da Conta
+    public void setNumeroConta(int numeroConta) {
+        this.numeroConta = numeroConta;
     }
-    public int getNumeroConta(){
+
+    public int getNumeroConta() {
         return this.numeroConta;
     }
 
-    //Titular
-    public void setTitular(String novoTitular){
-        this.titular = novoTitular;
+    // Titular
+    public void setTitular(Cliente titular) {
+        this.titular = titular;
     }
-    public String getTitular(){
+
+    public Cliente getTitular() {
         return this.titular;
     }
 
-
-
-
+    // total de contas
+    public static int getTotal() {
+        return Conta.total;
+    }
 
     // comportamentos da classe Conta
 
@@ -60,20 +74,20 @@ public class Conta {
             System.out.println("_saldo Insuficiente");
             return false;
         }
-       
+
     }
 
     public boolean transfere(double valor, Conta contaDestino) {
         if (this._saldo > 0 && valor <= this._saldo) {
             this._saldo -= valor;
             contaDestino._saldo += valor;
-            System.out.println("Transferido o valor de R$" + valor + "De "+this.titular+" Para " + contaDestino.titular);
+            System.out.println(this.getTitular().getNome() + ", tranferencia realizada com sucesso para "
+                    + contaDestino.getTitular().getNome() + " No valor de > R$" + valor);
             return true;
         } else {
             System.out.println("_saldo Insuficiente");
             return false;
         }
     }
-    
 
 }
