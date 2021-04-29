@@ -1,35 +1,33 @@
 package com.bytebank.app;
 
+import java.util.*;
+
 public class CriaConta {
-    public static void main(String[] args) {
-        // primeiraConta
 
-        Conta primeiraConta = new Conta(1001, 123456, new Cliente("Gabriel Messias da Rosa", "012.345.678.99"));
-        // segundaConta
-        Conta segundaConta = new Conta(1001, 654321, new Cliente("Mariele Aparecida Gusmao", "987.654.321.11"));
+    private String nomeTitular;
+    private String cpfTitular;
+    private int agencia;
+    private int numeroConta;
 
-        // programa em si
-        System.out.println();
-        System.out.println("Bem vindo(a), " + primeiraConta.getTitular().getNome() + ", ao ByteBank");
-        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
-        System.out.println("Numero da conta : " + primeiraConta.getNumeroConta());
-        System.out.println("Sua agencia é : " + primeiraConta.getAgencia());
-        System.out.println();
-        primeiraConta.deposita(5000);
-        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
-        System.out.println();
-        primeiraConta.saca(2500);
-        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
-        System.out.println();
-        primeiraConta.transfere(100, segundaConta);
-        System.out.println("Seu saldo é de : R$" + primeiraConta.getSaldo());
+    public Conta criaConta() {
 
-        System.out.println();
-        System.out.println("Bem vindo(a), " + segundaConta.getTitular().getNome() + ", ao ByteBank");
-        System.out.println("Seu saldo é de : " + segundaConta.getSaldo());
-        System.out.println("Numero da conta : " + segundaConta.getNumeroConta());
-        System.out.println("Sua agencia é : " + segundaConta.getAgencia());
-        System.out.println();
+        Scanner input = new Scanner(System.in);
+
+        System.out.println("Nome do titular > ");
+        this.nomeTitular = input.nextLine();
+
+        System.out.println("CPF do Titular");
+        this.cpfTitular = input.nextLine();
+
+        System.out.println("Qual sera a agencia do titular ? ");
+        this.agencia = input.nextInt();
+
+        System.out.println("Defina um numero para a conta do titular (Metodo provisorio)");
+        this.numeroConta = input.nextInt();
+
+        Conta contaCriada = new Conta(agencia, numeroConta, new Cliente(nomeTitular, cpfTitular));
+        return contaCriada;
 
     }
+
 }
