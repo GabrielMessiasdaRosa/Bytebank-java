@@ -1,5 +1,7 @@
 # Bytebank-java
 <p>🔷  Status: ⚠️ Em desenvolvimento </p>
+<p>❌ NÃO FUNCIONAL </p>
+
 
 <h2>Resumo</h2>
   <p>
