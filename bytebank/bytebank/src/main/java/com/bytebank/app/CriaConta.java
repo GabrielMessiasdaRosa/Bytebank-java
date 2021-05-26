@@ -26,8 +26,11 @@ public class CriaConta {
         this.numeroConta = input.nextInt();
 
         Conta contaCriada = new Conta(agencia, numeroConta, new Cliente(nomeTitular, cpfTitular));
+        System.out.println(contaCriada);
         return contaCriada;
 
     }
+
+    
 
 }

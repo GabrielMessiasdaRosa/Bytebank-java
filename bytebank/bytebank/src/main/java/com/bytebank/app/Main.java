@@ -17,7 +17,7 @@ public class Main {
             System.out.println("\n              #############################");
             System.out.println("              |     1 - Cria Conta        |");
             System.out.println("              |     2 - Cria Funcionario  |");
-            System.out.println("              |     3 - Listar contas     |");
+            System.out.println("              |     3 - Cria Gerente      |");
             System.out.println("              |     0 - Sair              |");
             System.out.println("              #############################\n");
 
